@@ -126,4 +126,34 @@ def iterStuffTT (a: String, b: String, c: Int) : Any = {
 
 iterStuffTT("Fizz", "Buzz", 15)
 
-//Iteration 4
+//Iteration 4 - Recursion
+
+def recurStuff (a: String, b: Int) : String = {
+
+  if (b <= 1)
+    println(a)
+  else {
+  println(a)
+  recurStuff(a, b - 1)
+  }
+
+  a
+}
+
+recurStuff("Pineapples", 15)
+
+//Recursion 2
+def recurStuffT (a: String, b: Int) : String = {
+
+  for(i<-1 to b)
+  {
+    print(a)
+  }
+  print("\n")
+  recurStuffT(a, b-1 )
+
+a }
+
+
+
+recurStuffT("Pete", 5)
