@@ -143,6 +143,7 @@ def recurStuff (a: String, b: Int) : String = {
 recurStuff("Pineapples", 15)
 
 //Recursion 2
+/*
 def recurStuffT (a: String, b: Int) : String = {
 
   for(i<-1 to b)
@@ -156,4 +157,16 @@ a }
 
 
 
-recurStuffT("Pete", 5)
+recurStuffT("Pete", 5)  */
+
+//Pattern matching
+def patMatch (a: Int, b: Int, c: Boolean) : Int = {
+
+  var ret = 0
+
+  c match {
+    case true => ret = a + b
+    case false => ret = a * b
+  }
+  ret
+}
