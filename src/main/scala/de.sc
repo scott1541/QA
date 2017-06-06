@@ -234,5 +234,28 @@ blackJack(21,5)
 //Unique Sum
 def uniqueSum (a: Int, b: Int, c: Int) : Int = {
 
+  var ret = 0
 
+  a match{
+    case _ if (a != b) && (a != c) && (b != c) => ret = a + b + c
+    case _ if (a != b) && (a != c) && (b == c) => ret = a
+    case _ if (a != b) && (a == c) && (b != c) => ret = b
+    case _ if (a == b) && (a != c) && (b != c) => ret = c
+    case _ => ret = 0
+  }
+  ret
 }
+uniqueSum(6,4,6)
+
+//Too Hot
+
+def tooHot (temp: Int, isSummer: Boolean) : Boolean = {
+
+  temp match{
+    case _ if (temp >= 60) && (temp <= 90) && (!isSummer) => true
+    case _ if (temp >= 60) && (temp <= 100) && isSummer => true
+    case _ => false
+  }
+}
+
+tooHot(99, true)
