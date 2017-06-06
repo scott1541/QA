@@ -1,21 +1,42 @@
 import com.sun.xml.internal.fastinfoset.util.StringArray
 import java.util.TimeZone
 
+//Basic - Hello World
+def helloWorld() : Any = {
+  println("Hello World!")
+}
+
+//Assignment
+def assign() : Any = {
+  val hello = "Hello World!"
+
+  println(hello)
+}
+
 //Parameters
-def doStuff(a: String) : String = {
+def paraMeters(a: String) : String = {
 
   println(a)
   a
+}
+
+//Return Types
+def returnType() : String = {
+  val ret = "Hello World!"
+
+  println(ret)
+  ret
 }
 
 //Type Inference
-def typeInfStuff(a: Any) : Any = {
+def typeInf(a: Any) : Any = {
 
   println(a)
   a
 }
-//Strings 1
-/*def stringStuff(a: Int, b:String) : String = {
+
+//Strings 1    //Finish this//////////////////////////////
+def stringSO(a: Int, b: String) : String = {
   val carr = new Array[Char](b.length)
 
   for(i<-1 to b.length)
@@ -23,27 +44,28 @@ def typeInfStuff(a: Any) : Any = {
   b
 
   b.length
-} */
+}
 
 //Strings 2
-def stringsTwo(a: String, b: String, c: Char, d: Char) : String = {
-  var e = a.concat(b)
-  var f = e.replace(c,d)
+def stringST(a: String, b: String, c: Char, d: Char) : String = {
+  val e = a.concat(b)
+  val f = e.replace(c,d)
+
   f
 }
 
-stringsTwo("hello", "world", 'l', 'x')
+//stringST("hello", "world", 'l', 'x')
 
 //Operators
-def stuffOps(a: Int, b: Int) : Int = {
-  var c = a + b
+def operaT(a: Int, b: Int) : Int = {
+  val c = a + b
   c
 }
 
-stuffOps(2,4)
+//operaT(2,4)
 
-//Conditionals
-def stuffCond (a: Int, b: Int, c: Boolean) : Int = {
+//Conditionals 1
+def condiT (a: Int, b: Int, c: Boolean) : Int = {
   var d = 0
   if (c)
   {
@@ -56,10 +78,10 @@ def stuffCond (a: Int, b: Int, c: Boolean) : Int = {
   d
 }
 
-stuffCond(5,10,true)
+//condiT(5,10,true)
 
 //Conditionals 2
-def stuffCondT (a: Int, b: Int, c: Boolean) : Int = {
+def condiTT (a: Int, b: Int, c: Boolean) : Int = {
   var d = 0
   if (a == 0)
     {
@@ -81,19 +103,20 @@ def stuffCondT (a: Int, b: Int, c: Boolean) : Int = {
   d
 }
 
-stuffCondT(0,677,false)
+//condiTT(0,677,false)
 
-//Iteration
-def iterStuff (a: String, b: Int) : String = {
+//Iteration 1
+def iterAt (a: String, b: Int) : String = {
   for(i<-1 to b)
     println(a + "\n")
+
   a
 }
 
-iterStuff("Hello", 6)
+//iterAt("Hello", 6)
 
 //Iteration 2
-def iterStuffT (a: String, b: Int) : String = {
+def iterAtT (a: String, b: Int) : String = {
   for(i<-1 to b)
   {
     for(i<-1 to b)
@@ -105,10 +128,10 @@ def iterStuffT (a: String, b: Int) : String = {
   a
 }
 
-iterStuffT("Hello", 10)
+//iterAtT("Hello", 10)
 
 //Iteration 3
-def iterStuffTT (a: String, b: String, c: Int) : Any = {
+def iterAtTT (a: String, b: String, c: Int) : Any = {
   for(i<-1 to c) {
     if ((i % 5 == 0) && (i % 3 == 0))
       {
@@ -127,25 +150,24 @@ def iterStuffTT (a: String, b: String, c: Int) : Any = {
     }
 }
 
-iterStuffTT("Fizz", "Buzz", 15)
+//iterAtTT("Fizz", "Buzz", 15)
 
 //Iteration 4 - Recursion
 
-def recurStuff (a: String, b: Int) : String = {
+def recurS (a: String, b: Int) : String = {
 
   if (b <= 1)
     println(a)
   else {
   println(a)
-  recurStuff(a, b - 1)
+  recurS(a, b - 1)
   }
-
   a
 }
 
-recurStuff("Pineapples", 15)
+//recurS("Pineapples", 15)
 
-//Recursion 2
+//Iteration 4.5 - Recursion 2 //Need to finish this/////////////////////////
 /*
 def recurStuffT (a: String, b: Int) : String = {
 
@@ -164,7 +186,6 @@ recurStuffT("Pete", 5)  */
 
 //Pattern matching
 def patMatch (a: Int, b: Int, c: Boolean) : Int = {
-
   var ret = 0
 
   c match {
@@ -174,31 +195,31 @@ def patMatch (a: Int, b: Int, c: Boolean) : Int = {
   ret
 }
 
-patMatch(5,7,false)
+//patMatch(5,7,false)
 
-//Pattern matching 1.5     //Not quite right
+//Pattern matching 1.5
 def patMatchT (a: Int, b: Int, c: Boolean) : Int = {
   var ret = 0
 
   c match {
-    case true => ret = a + b
-    case false => ret = a * b
     case _ if a == 0 => ret = b
     case _ if b == 0 => ret = a
+    case true => ret = a + b
+    case false => ret = a * b
   }
   ret
 }
 
-patMatchT(5,0,true)
+//patMatchT(0,4,true)
 
-//Pattern matching 2   //Come back to this
+//Pattern matching 2   //Need to do this ///////////////////////////////////////////////
 /*def patmatchTT (a: Int, b: Int) : Int = {
 
 
 } */
 
-//Functional 1
-def functionAL () : Any = {
+//Functional 1  //Need to do this  ////////////////////////////////////////////////////
+/*def functionAL () : Any = {
 
   val zones: Array[String] = TimeZone.getAvailableIDs.filter(_.length > 3)
   //val newZones: Array[String] = zones.split
@@ -207,33 +228,25 @@ def functionAL () : Any = {
 
 }
 
-functionAL()
+functionAL() */
 
-//Blackjack    //Needs improvement
-
+//Blackjack
 def blackJack (a: Int, b: Int) : Int = {
-  var c = 0
-if((a > 21) && (b > 21)){
-  c = 0
-}
-else if((a > b) && (a <= 21) ){
-  c = a
-}
-else if((b > a)  && (b <= 21)){
-  c = b
-}
-else
-{
-  c = 0
-}
-c
+  var ret = 0
+
+  a match{
+    case _ if (a > 21) && (b > 21) => ret = 0
+    case _ if (a > b) && (a <= 21) => ret = a
+    case _ if (b > a) && (b <= 21) => ret = b
+    case _ => ret = 0
+  }
+  ret
 }
 
-blackJack(21,5)
+//blackJack(2,20)
 
 //Unique Sum
 def uniqueSum (a: Int, b: Int, c: Int) : Int = {
-
   var ret = 0
 
   a match{
@@ -245,7 +258,7 @@ def uniqueSum (a: Int, b: Int, c: Int) : Int = {
   }
   ret
 }
-uniqueSum(6,4,6)
+//uniqueSum(6,4,6)
 
 //Too Hot
 
@@ -258,4 +271,4 @@ def tooHot (temp: Int, isSummer: Boolean) : Boolean = {
   }
 }
 
-tooHot(99, true)
+//tooHot(99, true)
