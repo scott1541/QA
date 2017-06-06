@@ -1,3 +1,6 @@
+import com.sun.xml.internal.fastinfoset.util.StringArray
+import java.util.TimeZone
+
 //Parameters
 def doStuff(a: String) : String = {
 
@@ -169,4 +172,67 @@ def patMatch (a: Int, b: Int, c: Boolean) : Int = {
     case false => ret = a * b
   }
   ret
+}
+
+patMatch(5,7,false)
+
+//Pattern matching 1.5     //Not quite right
+def patMatchT (a: Int, b: Int, c: Boolean) : Int = {
+  var ret = 0
+
+  c match {
+    case true => ret = a + b
+    case false => ret = a * b
+    case _ if a == 0 => ret = b
+    case _ if b == 0 => ret = a
+  }
+  ret
+}
+
+patMatchT(5,0,true)
+
+//Pattern matching 2   //Come back to this
+/*def patmatchTT (a: Int, b: Int) : Int = {
+
+
+} */
+
+//Functional 1
+def functionAL () : Any = {
+
+  val zones: Array[String] = TimeZone.getAvailableIDs.filter(_.length > 3)
+  //val newZones: Array[String] = zones.split
+  zones
+
+
+}
+
+functionAL()
+
+//Blackjack    //Needs improvement
+
+def blackJack (a: Int, b: Int) : Int = {
+  var c = 0
+if((a > 21) && (b > 21)){
+  c = 0
+}
+else if((a > b) && (a <= 21) ){
+  c = a
+}
+else if((b > a)  && (b <= 21)){
+  c = b
+}
+else
+{
+  c = 0
+}
+c
+}
+
+blackJack(21,5)
+
+//Unique Sum
+def uniqueSum (a: Int, b: Int, c: Int) : Int = {
+
+
 }
