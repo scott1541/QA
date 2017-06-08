@@ -56,3 +56,5 @@ def applyMoreDiscount[T](discount: T): Seq[T] = {
 }
 
 println(s"Applying the function with parameter ${applyMoreDiscount("Code-123")}")
+
+//date .map(item=> item.split(/).last).filter(_.length > 4)))

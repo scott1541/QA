@@ -219,11 +219,14 @@ def patMatchT (a: Int, b: Int, c: Boolean) : Int = {
 } */
 
 //Functional 1  //Need to do this  ////////////////////////////////////////////////////
-/*def functionAL () : Any = {
+/*
+def functionAL () : Any = {
 
-  val zones: Array[String] = TimeZone.getAvailableIDs.filter(_.length > 3)
+  var zoneMap = Map(TimeZone.getAvailableIDs.filter(_.length > 3))
   //val newZones: Array[String] = zones.split
-  zones
+  //val zones: Array[String] = TimeZone.getAvailableIDs.filter(_.length > 3)
+
+  print(zoneMap)
 
 
 }
