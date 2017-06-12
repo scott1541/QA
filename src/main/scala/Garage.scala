@@ -3,13 +3,24 @@
   */
 class Garage {
 
+  def addCustomer() = {}
 
+  def addEmployee() = {}
+
+  def remEmployee() = {}
+
+  def addVehicle() = {
+
+}
+  def remVehicle() = {}
+
+  def workOnVehicle() = {}
 
 }
 
- class Person (a: Int){
+ class Person (personID: Int){
 
-  var personID
+  val personID
   var name
   var contactNum
   var address
@@ -27,9 +38,18 @@ class Garage {
    def name = (a: String)
 }
 
-abstract class Employee (a: Int) extends Person(a: Int) {
+ abstract class Employee (a: Int) extends Person(a: Int) {
 
   personID
 }
 
-abstract class Customer (a: Int) extends Person(a: Int) {}
+ abstract class Customer (a: Int) extends Person(a: Int) {}
+
+ class Vehicle (vehicleReg: String) {
+
+
+   }
+
+
+
+ }
