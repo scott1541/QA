@@ -35,16 +35,18 @@ def typeInf(a: Any) : Any = {
   a
 }
 
-//Strings 1    //Finish this//////////////////////////////
+//Strings 1
 def stringSO(a: Int, b: String) : String = {
-  val carr = new Array[Char](b.length)
+  val carr = b.toList
+  var ret = ""
 
-  for(i<-1 to b.length)
-    carr(i) == b.charAt(i)
-  b
+  for(i<-0 to a-1)
+    ret = (ret + carr.reverse(i))
 
-  b.length
+  println("Output: " + ret)
+  ret
 }
+//stringSO(4, "testing")
 
 //Strings 2
 def stringST(a: String, b: String, c: Char, d: Char) : String = {
@@ -167,22 +169,32 @@ def recurS (a: String, b: Int) : String = {
 
 //recurS("Pineapples", 15)
 
-//Iteration 4.5 - Recursion 2 //Need to finish this/////////////////////////
-/*
+//Iteration 4.5 - Recursion 2 //Something wrong
+
 def recurStuffT (a: String, b: Int) : String = {
 
-  for(i<-1 to b)
-  {
-    print(a)
+  if (b <= 1)
+    prinT(a,b)
+  else {
+    prinT(a,b)
+    recurStuffT(a, b - 1)
+  }}
+
+  def prinT(a: String, b: Int) : String = {
+
+    if (b <= 1) {
+      println(a)
+
+    }
+    else {
+      print(a)
+      prinT(a, b - 1)
+
+    }
+    a
   }
-  print("\n")
-  recurStuffT(a, b-1 )
 
-a }
-
-
-
-recurStuffT("Pete", 5)  */
+//recurStuffT("Pete", 5)
 
 //Pattern matching
 def patMatch (a: Int, b: Int, c: Boolean) : Int = {
@@ -219,32 +231,22 @@ def patMatchT (a: Int, b: Int, c: Boolean) : Int = {
 } */
 
 //Functional 1  //Need to do this  ////////////////////////////////////////////////////
-/*
+
 def functionAL () : Any = {
 
-  var zoneMap = Map(TimeZone.getAvailableIDs.filter(_.length > 3))
-  //val newZones: Array[String] = zones.split
-  //val zones: Array[String] = TimeZone.getAvailableIDs.filter(_.length > 3)
+  val zoneMap = TimeZone.getAvailableIDs.map(item => item.split('/').last).filter(_.length > 4)
 
-  print(zoneMap)
-
+print(zoneMap)
 
 }
 
-functionAL() */
+functionAL()
 
 //Blackjack
 def blackJack (a: Int, b: Int) : Int = {
-  var ret = 0
-
-  a match{
-    case _ if (a > 21) && (b > 21) => ret = 0
-    case _ if (a > b) && (a <= 21) => ret = a
-    case _ if (b > a) && (b <= 21) => ret = b
-    case _ => ret = 0
+    val collect = ((List(a,b,0).sorted)filter(_ <= 21)).reverse
+    collect.head
   }
-  ret
-}
 
 //blackJack(2,20)
 
